@@ -48,6 +48,10 @@
         color: #737373;
         font-size: 14px;
       }
+      #qrcode {
+        width: 256px;
+        margin: 0 auto;
+      }
       #footnote {
         color: #737373;
         font-size: 14px;
@@ -78,6 +82,8 @@
 
     <h3 id="os-message">Please open this page on your Android device!</h3>
 
+    <div id="qrcode"></div>
+
     <p id="finished">
       App is being installed. You might have to close the browser.
     </p>
@@ -86,5 +92,10 @@
       This is a beta version and is not intended for public sharing.
     </p>
     <img src="https://fastlane.tools/assets/images/fastlane-logo-lockup.png" id="fastlaneLogo" />
+
+    <script src="/static/qrcode.min.js"></script>
+    <script>
+      new QRCode(document.getElementById("qrcode"), window.location.href);
+    </script>
   </body>
 </html>
